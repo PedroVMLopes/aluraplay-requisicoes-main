@@ -32,6 +32,7 @@ body {
     width: 100%;
     padding: 0 25px;
     z-index: 2;
+    
 }
 
 .logo {
@@ -105,4 +106,8 @@ body {
         height: 100vh;
     }
 
+}
+
+.hidden {
+    display: none;
 }
