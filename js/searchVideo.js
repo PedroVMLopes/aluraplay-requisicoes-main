@@ -10,6 +10,10 @@ async function searchVideo(event) {
 
   const list = document.querySelector("[data-list]");
 
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+
   search.forEach((element) =>
     list.appendChild(
       cardConstructor(
@@ -20,6 +24,10 @@ async function searchVideo(event) {
       )
     )
   );
+
+  if (search.length == 0) {
+    list.innerHTML = `<h2 class="mensagem__titulo">Não existem vídeos com esse termo<h2>`;
+  }
 }
 
 const searchButton = document.querySelector("[data-search-button]");

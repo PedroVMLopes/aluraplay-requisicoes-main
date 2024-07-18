@@ -22,17 +22,21 @@ export default function cardConstructor(titulo, descricao, url, imagem) {
 
 // Function that creates a <li> element to every item on the list
 async function videoList() {
-  const apiList = await apiConnect.videoList();
-  apiList.forEach((element) =>
-    list.appendChild(
-      cardConstructor(
-        element.titulo,
-        element.descricao,
-        element.url,
-        element.imagem
+  try {
+    const apiList = await apiConnect.videoList();
+    apiList.forEach((element) =>
+      list.appendChild(
+        cardConstructor(
+          element.titulo,
+          element.descricao,
+          element.url,
+          element.imagem
+        )
       )
-    )
-  );
+    );
+  } catch (error) {
+    list.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de vídeos<h2>`;
+  }
 }
 
 videoList();
