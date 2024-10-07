@@ -14,13 +14,19 @@
   z-index: 1;
   padding: 153px 20px 10px 20px;
   width: auto;
+  justify-content: space-around;
 }
 
 .videos__item {
   flex-grow: 1;
   height: 303px;
   width: 280px;
-  max-width: 280px;
+  max-width: 500px;
+}
+
+.videos__item:last-child {
+  margin-right: auto;
+  width: auto;
 }
 
 /* grid vídeos */
